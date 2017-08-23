@@ -16,18 +16,24 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
         memes = appDelegate.memes
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {            return self.memes.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.memes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the name and image
-        cell.nameLabel.text = memes.topText
-        cell.villainImageView?.image = UIImage(named: villain.imageName)
+        cell.memeImage?.image = meme.memedImage
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailController = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.pickedMeme = memes[indexPath.row]
+        navigationController!.pushViewController(detailController, animated: true)
     }
 }

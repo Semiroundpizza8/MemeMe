@@ -10,6 +10,7 @@ import UIKit
 
 class MemeTableViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     var memes: [Meme]!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -35,5 +36,10 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.pickedMeme = memes[indexPath.row]
+        navigationController!.pushViewController(detailController, animated: true)
+    }
 }
+
