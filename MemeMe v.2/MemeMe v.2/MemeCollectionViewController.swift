@@ -9,31 +9,48 @@
 import UIKit
 
 class MemeCollectionViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    //------------------------------------------------------------------
+    //     Variables
+    //------------------------------------------------------------------
+    
     var memes: [Meme]!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     
-    override func viewDidLoad() {
+    //------------------------------------------------------------------
+    //     Setup
+    //------------------------------------------------------------------
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        super.viewDidLoad()
+        
+        var picturesPerRow : CGFloat!
+        
+        // If in landscape, set x pictures per row
+        if UIDevice.current.orientation.isLandscape {
+            picturesPerRow = 4
+        } else {
+            picturesPerRow = 3
+        }
         
         // Set-up grid layout
         let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
-            
+        // Dimensions of pictures are size of the frame divided by the pictures needed per row, less the space between rows
+        let dimension = (view.frame.size.width / picturesPerRow) - space
+        
         flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumLineSpacing = (view.frame.size.width - (picturesPerRow * dimension)) / (picturesPerRow - 1)
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        collectionView.reloadData()
     }
     
     //------------------------------------------------------------------
     //     collectionView Functions
     //------------------------------------------------------------------
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.collectionView.reloadData()
-    }
     
     // Count number of items needed
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

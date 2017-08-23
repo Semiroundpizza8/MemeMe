@@ -133,7 +133,7 @@
         <scene sceneID="c4l-3f-CfO">
             <objects>
                 <navigationController id="c20-QO-bAv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gqx-xq-XKP"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="collection_30x30" id="gqx-xq-XKP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c5l-tL-g1g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -150,7 +150,7 @@
         <scene sceneID="B2D-CB-uGY">
             <objects>
                 <navigationController id="k8f-aW-CCb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bm0-c9-aRF"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="table_30x30" selectedImage="table_30x30" id="bm0-c9-aRF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PlQ-8n-8q4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,7 +230,7 @@
                             <constraint firstItem="o5Y-zF-B28" firstAttribute="top" secondItem="mEV-qf-hCP" secondAttribute="bottom" id="y9a-Sa-V8R"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Collection View" id="5zi-fQ-vG4"/>
+                    <tabBarItem key="tabBarItem" title="Collection View" image="collection_30x30" id="5zi-fQ-vG4"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="Dac-Bp-qgA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Xh-oc-LnY">
                             <connections>
@@ -285,7 +285,7 @@
                             <constraint firstItem="hzJ-CY-nZw" firstAttribute="leading" secondItem="RAj-xF-ryY" secondAttribute="leading" id="tlY-hS-HKD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Table View" id="Lqm-Em-X7Z"/>
+                    <tabBarItem key="tabBarItem" title="Table View" image="table_30x30" selectedImage="table_30x30" id="Lqm-Em-X7Z"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="GuR-8k-FBm">
                         <barButtonItem key="backBarButtonItem" title="Sent Memes" id="Rbr-11-kwu"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AfB-46-e3h">
@@ -333,7 +333,11 @@
             <point key="canvasLocation" x="-6217" y="855"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xux-UR-6Ca"/>
+        <segue reference="hnA-yL-ANu"/>
     </inferredMetricsTieBreakers>
 </document>
