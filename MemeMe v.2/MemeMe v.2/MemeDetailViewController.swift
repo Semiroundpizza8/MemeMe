@@ -22,7 +22,6 @@ class MemeDetailViewController : UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(pickedMeme.topText)
 //        self.memeLabel.text = self.pickedMeme.topText
         self.imageView.image = self.pickedMeme.memedImage
     }

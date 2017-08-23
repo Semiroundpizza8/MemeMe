@@ -238,6 +238,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="mEV-qf-hCP" id="i1s-Ok-Eie"/>
+                        <outlet property="flowLayout" destination="6Qe-7U-mm8" id="wCx-4a-pTj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDN-DY-teB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

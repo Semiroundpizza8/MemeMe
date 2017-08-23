@@ -113,11 +113,11 @@
 				5E4A68461F4D5F80009D1487 /* MemeCollectionViewCell.swift */,
 				5E17FCC81F4D33910097FBD9 /* MemeDetailViewController.swift */,
 				5E6DCBAB1EF1D83D000A9053 /* AppDelegate.swift */,
+				5E359D541EF33B2300479098 /* memeStruct.swift */,
 				5E6DCBAF1EF1D83D000A9053 /* Main.storyboard */,
 				5E6DCBB21EF1D83D000A9053 /* Assets.xcassets */,
 				5E6DCBB41EF1D83D000A9053 /* LaunchScreen.storyboard */,
 				5E6DCBB71EF1D83D000A9053 /* Info.plist */,
-				5E359D541EF33B2300479098 /* memeStruct.swift */,
 			);
 			path = "MemeMe v.2";
 			sourceTree = "<group>";
