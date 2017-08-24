@@ -18,6 +18,7 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        tableView.reloadData()
     }
     
     //------------------------------------------------------------------

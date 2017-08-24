@@ -200,7 +200,7 @@ class MemeEditViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
 //------------------------------------------------------------------
-//     Share and Cancel Buttons
+//     Share, Return, and Reset Buttons
 //------------------------------------------------------------------
     
     // Show sharing interface when the Share button is clicked
@@ -216,7 +216,7 @@ class MemeEditViewController: UIViewController, UIImagePickerControllerDelegate,
         present(activityViewController, animated: true, completion: nil)
     }
     
-    // Reset the screen when the Cancel button is clicked
+    // Reset the screen when the Cancel button is clicked **CHANGED TO RETURN**
     @IBAction func cancelButtonClicked(_ sender: AnyObject) {
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
@@ -225,6 +225,8 @@ class MemeEditViewController: UIViewController, UIImagePickerControllerDelegate,
         shareButton.isEnabled = false
     }
     
-    
+    @IBAction func dismissScreen(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
